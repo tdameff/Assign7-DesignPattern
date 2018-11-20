@@ -1,0 +1,73 @@
+// The part below needs to be included for Spotbugs
+plugins {
+   id  'com.github.spotbugs' version '1.6.5'
+}
+
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+///////////////////////////////////////////////////////////////////////////
+// Definint Main class
+///////////////////////////////////////////////////////////////////////////
+mainClassName = 'main.java.Main'
+
+///////////////////////////////////////////////////////////////////////////
+// Repositories and dependencies for code go here
+///////////////////////////////////////////////////////////////////////////
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes  \
+			 'Main-Class' : 'main.java.Main' 	 
+    }
+    
+    baseName = 'Assign7-DesignPattern'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+///////////////////////////////////////////////////////////////////////////
+// Configure Checkstyle
+///////////////////////////////////////////////////////////////////////////
+apply plugin: 'checkstyle'
+checkstyle {
+  // Keep checkstyle a little quieter
+  ignoreFailures = true
+  showViolations = false
+}
+
+tasks.withType(Checkstyle) {
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
+}
+checkstyle {
+    toolVersion = "8.8"
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+// Configure SpotBugs
+///////////////////////////////////////////////////////////////////////////
+
+//The part below needs to be included for Spotbugs
+spotbugs {
+  toolVersion = '3.1.1'
+}
+
+// To generate an HTML report instead of XML
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+   reports {
+     xml.enabled = false
+     html.enabled = true
+   }
+}
