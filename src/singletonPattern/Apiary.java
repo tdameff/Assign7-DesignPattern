@@ -1,5 +1,10 @@
 package singletonPattern;
 
+//Imports
+import java.util.HashMap;
+import java.util.Map;
+import builderPattern.Beehive;
+
 /**
  * @author Taylor Dameff
  * SER 334 - Assignment 7
@@ -20,6 +25,11 @@ public class Apiary {
     private static Apiary apiaryInstance = null;
     
     /**
+     * HashMap array to hold the beehives after they are created
+     */
+    private Map<Integer, Beehive> beehiveList = new HashMap<Integer, Beehive>();
+    
+    /**
      * Private constructor for when an instance of Apiary needs to be created
      */
     private Apiary() {
@@ -30,7 +40,6 @@ public class Apiary {
      * Design Pattern: Singleton
      * 
      * Static method to create an instance of Apiary
-     * 
      * @return An instance of Apiary
      */
     public static Apiary getInstance() {
@@ -43,5 +52,14 @@ public class Apiary {
         
         //Return the instance
         return apiaryInstance;
+    }
+    
+    /**
+     * This method returns the beehiveList
+     * @return beehiveList
+     */
+    public Map<Integer, Beehive> getBeehives() {
+        //Return the beehiveList
+        return this.beehiveList;
     }
 }
