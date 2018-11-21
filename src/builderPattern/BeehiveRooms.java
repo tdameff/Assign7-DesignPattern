@@ -79,7 +79,7 @@ public class BeehiveRooms {
      * @param bedRooms the bedRooms to set
      */
     public void setBedRooms(int bedRooms) {
-        bedRooms = bedRooms;
+        this.bedRooms = bedRooms;
     }
 
     /**
