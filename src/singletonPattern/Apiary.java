@@ -4,6 +4,8 @@ package singletonPattern;
 import java.util.HashMap;
 import java.util.Map;
 import builderPattern.Beehive;
+import builderPattern.Beehive.BeehiveBuilder;
+import builderPattern.BeehiveRooms.RoomBuilder;
 
 /**
  * @author Taylor Dameff
@@ -61,5 +63,21 @@ public class Apiary {
     public Map<Integer, Beehive> getBeehives() {
         //Return the beehiveList
         return this.beehiveList;
+    }
+    
+    /**
+     * Calls the Beehive Builder
+     * @return BeehiveBuilder object
+     */
+    public BeehiveBuilder createBeehive() {
+        return new BeehiveBuilder();
+    }
+    
+    /**
+     * Calls the Beehive Room Builder
+     * @return RoomBuilder object
+     */
+    public RoomBuilder createBeehiveRooms() {
+        return new RoomBuilder();
     }
 }
