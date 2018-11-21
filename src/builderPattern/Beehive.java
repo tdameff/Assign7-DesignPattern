@@ -5,10 +5,12 @@ public class Beehive {
     //Variables
     private int id;
     private String name;
+    private BeehiveRooms rooms;
     
-    private Beehive(Builder builder) {
+    private Beehive(BeehiveBuilder builder) {
         this.id = builder.id;
         this.name = builder.name;
+        this.rooms = builder.rooms;
     }
     
     /**
@@ -39,22 +41,38 @@ public class Beehive {
         this.name = name;
     }
 
+    /**
+     * @return the rooms
+     */
+    public BeehiveRooms getRooms() {
+        return rooms;
+    }
+
+    /**
+     * @param rooms the rooms to set
+     */
+    public void setRooms(BeehiveRooms rooms) {
+        this.rooms = rooms;
+    }
+
+    
     
     /**
      * Static Builder class for Beehives
      */
-    public static class Builder {
+    public static class BeehiveBuilder {
         
         //Variables
         private int id;
         private String name;
+        private BeehiveRooms rooms;        
         
         /**
          * Sets the id for the beehive
          * @param id
          * @return builder object
          */
-        public Builder id(int id) {
+        public BeehiveBuilder id(int id) {
             this.id = id;
             return this;
         }
@@ -64,8 +82,18 @@ public class Beehive {
          * @param name
          * @return builder object
          */
-        public Builder name(String name) {
+        public BeehiveBuilder name(String name) {
             this.name = name;
+            return this;
+        }
+        
+        /**
+         * sets the rooms for the beehive
+         * @param rooms
+         * @return builder object
+         */
+        public BeehiveBuilder rooms(BeehiveRooms rooms) {
+            this.rooms = rooms;
             return this;
         }
         
