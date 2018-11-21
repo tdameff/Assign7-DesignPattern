@@ -8,9 +8,36 @@ public class BeehiveRooms {
     private int bedRooms;
     
     private BeehiveRooms(Builder builder) {
-        this.spawnRooms = builder.spawnRooms;
-        this.commonRooms = builder.commonRooms;
-        this.bedRooms = builder.bedRooms;
+        
+        //If the number of spawn rooms is less than zero,
+        //set the number of rooms to 1
+        if(builder.spawnRooms < 1) {
+            this.spawnRooms = 1;
+        }
+        //Otherwise, use the number that was passed
+        else {
+            this.spawnRooms = builder.spawnRooms;
+        }
+        
+        //If the number of common rooms is less than zero,
+        //set the number of rooms to 1
+        if(builder.commonRooms < 1) {
+            this.commonRooms = 1;
+        }
+        //Otherwise, use the number that was passed
+        else {
+            this.commonRooms = builder.commonRooms;
+        }
+        
+        //If the number of bed rooms is less than zero,
+        //set the number of rooms to 1
+        if(builder.bedRooms < 1) {
+            this.bedRooms = 1;
+        }
+        //Otherwise, use the number that was passed
+        else {
+            this.bedRooms = builder.bedRooms;
+        }
     }
 
     /**
