@@ -7,7 +7,7 @@ public class BeehiveRooms {
     private int commonRooms;
     private int bedRooms;
     
-    private BeehiveRooms(Builder builder) {
+    private BeehiveRooms(RoomBuilder builder) {
         
         //If the number of spawn rooms is less than zero,
         //set the number of rooms to 1
@@ -85,7 +85,7 @@ public class BeehiveRooms {
     /**
      * Static Builder class for Beehives
      */
-    public static class Builder {
+    public static class RoomBuilder {
         
         //Variables
         private int spawnRooms;
@@ -97,7 +97,7 @@ public class BeehiveRooms {
          * @param spawnRooms
          * @return builder object
          */
-        public Builder spawnRooms(int spawnRooms) {
+        public RoomBuilder spawnRooms(int spawnRooms) {
             this.spawnRooms = spawnRooms;
             return this;
         }
@@ -107,7 +107,7 @@ public class BeehiveRooms {
          * @param commonRooms
          * @return builder object
          */
-        public Builder commonRooms(int commonRooms) {
+        public RoomBuilder commonRooms(int commonRooms) {
             this.commonRooms = commonRooms;
             return this;
         }
@@ -117,7 +117,7 @@ public class BeehiveRooms {
          * @param bedRooms
          * @return builder object
          */
-        public Builder bedRooms(int bedRooms) {
+        public RoomBuilder bedRooms(int bedRooms) {
             this.bedRooms = bedRooms;
             return this;
         }
