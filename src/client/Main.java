@@ -1,4 +1,4 @@
-package main;
+package client;
 
 import builderpattern.Beehive;
 import builderpattern.BeehiveRooms;
@@ -7,7 +7,9 @@ import singletonpattern.Apiary;
 /**
  * Main class for the testing of the Patterns.
  * 
- * @author Taylor Dameff SER 316 - Assignment 7 November 20, 2018
+ * @author Taylor Dameff 
+ *      SER 316 - Assignment 7 
+ *      November 20, 2018
  */
 
 public class Main {
@@ -22,11 +24,11 @@ public class Main {
     // SINGLETON PATTERN
     Apiary apiary = Apiary.getInstance();
 
+    
     // BUILDER PATTERN
     System.out.println("[BUILDER PATTERN]");
 
-    // Create an object of BeehiveRooms that we will build and add to our beehive
-    // object
+    // Create an object of BeehiveRooms that we will build and add to our beehive object
     BeehiveRooms rooms = apiary.createBeehiveRooms()
         .spawnRooms(2).commonRooms(3).bedRooms(5).build();
     BeehiveRooms rooms2 = apiary.createBeehiveRooms()

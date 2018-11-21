@@ -9,7 +9,9 @@ import java.util.Map;
 /**
  * Apiary class handles the creating of the Beehives.
  * 
- * @author Taylor Dameff SER 316 - Assignment 7 November 20, 2018
+ * @author Taylor Dameff 
+ *      SER 316 - Assignment 7 
+ *      November 20, 2018
  */
 
 public class Apiary {

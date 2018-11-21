@@ -3,7 +3,9 @@ package builderpattern;
 /**
  * Beehive Builder class handles the building of the Beehive.
  * 
- * @author Taylor Dameff SER 316 - Assignment 7 November 20, 2018
+ * @author Taylor Dameff 
+ *      SER 316 - Assignment 7 
+ *      November 20, 2018
  */
 
 public class Beehive {
