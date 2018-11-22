@@ -14,11 +14,13 @@ public class Beehive {
   private int id;
   private String name;
   private BeehiveRooms rooms;
+  private Species species;
 
   private Beehive(BeehiveBuilder builder) {
     this.id = builder.id;
     this.name = builder.name;
     this.rooms = builder.rooms;
+    this.species = builder.species;
   }
 
   /**
@@ -76,6 +78,20 @@ public class Beehive {
   }
 
   /**
+   * @return the species
+   */
+  public Species getSpecies() {
+    return species;
+  }
+
+  /**
+   * @param species the species to set
+   */
+  public void setSpecies(Species species) {
+    this.species = species;
+  }
+
+  /**
    * Static Builder class for Beehives.
    */
   public static class BeehiveBuilder {
@@ -83,7 +99,9 @@ public class Beehive {
     // Variables
     private int id;
     private String name;
+    private Species species;
     private BeehiveRooms rooms;
+    
 
     /**
      * Sets the id for the beehive.
@@ -104,6 +122,17 @@ public class Beehive {
      */
     public BeehiveBuilder name(String name) {
       this.name = name;
+      return this;
+    }
+    
+    /**
+     * Sets the Bee species.
+     * 
+     * @param species of type Species
+     * @return builder object
+     */
+    public BeehiveBuilder species(Species species) {
+      this.species = species;
       return this;
     }
 
