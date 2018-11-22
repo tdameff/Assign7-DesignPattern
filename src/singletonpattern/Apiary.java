@@ -49,6 +49,14 @@ public class Apiary {
     // Return the instance
     return apiaryInstance;
   }
+  
+  /**
+   * Add the beehive to the beehive list
+   * @param beehive of type Beehive
+   */
+  public void addBeehive(Beehive beehive) {
+    this.beehiveList.put(beehive.getId(), beehive);
+  }
 
   /**
    * Get method for the BeehiveList.
