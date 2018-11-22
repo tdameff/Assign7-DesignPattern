@@ -1,6 +1,5 @@
 package decoratorpattern;
 
-import builderpattern.Beehive;
 import builderpattern.Species;
 import singletonpattern.Apiary;
 
