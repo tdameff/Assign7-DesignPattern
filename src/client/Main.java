@@ -1,13 +1,16 @@
 package client;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import builderpattern.Beehive;
 import builderpattern.BeehiveRooms;
 import builderpattern.Species;
+import decoratorpattern.Architect;
 import decoratorpattern.BaseBee;
 import decoratorpattern.Bee;
-import decoratorpattern.BumbleBee;
+import decoratorpattern.Queen;
+import decoratorpattern.Worker;
 import singletonpattern.Apiary;
 
 /**
@@ -28,7 +31,8 @@ public class Main {
   public static void main(String[] args) {
 
     // SINGLETON PATTERN
-    System.out.println("[SINGLETON PATTERN]\nCreating instance of Apiary...\n");
+    System.out.println("[SINGLETON PATTERN]\nCreating instance of Apiary..."
+        + "\nUsing instance to spawn Beehives...\n");
     Apiary apiary = Apiary.getInstance();
 
     
@@ -80,7 +84,28 @@ public class Main {
 
     // DECORATOR PATTERN
     System.out.println("\n[DECORATOR PATTERN]");
+    
+    ArrayList<Bee> bees = new ArrayList<Bee>();
 
+    // Create bees with decorator pattern
+    System.out.println("Creating Bees...");
+    Bee b = new Worker(new BaseBee(1, 1));
+    Bee queen = new Queen(new BaseBee(2, 2));
+    Bee architect = new Architect(new BaseBee(3, 3));
+    
+    // Add bees to list so we can print them easily
+    bees.add(b);
+    bees.add(queen);
+    bees.add(architect);
+    
+    System.out.println("Displaying Bees...");
+    for(int i = 0; i < bees.size(); i++) {
+      System.out.println("\nSpecies: " + bees.get(i).getSpecies()
+          + "\nBeehive: " + bees.get(i).getBeehive()
+          + "\nJob: " + bees.get(i).getJob()
+          + "\nStrength: " + bees.get(i).getStrength());
+    }
+    
   }
 }
 
