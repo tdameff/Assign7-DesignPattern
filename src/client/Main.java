@@ -1,5 +1,7 @@
 package client;
 
+import java.util.Map;
+
 import builderpattern.Beehive;
 import builderpattern.BeehiveRooms;
 import singletonpattern.Apiary;
@@ -22,6 +24,7 @@ public class Main {
   public static void main(String[] args) {
 
     // SINGLETON PATTERN
+    System.out.println("[SINGLETON PATTERN]\nCreating instance of Apiary...\n");
     Apiary apiary = Apiary.getInstance();
 
     
@@ -29,6 +32,7 @@ public class Main {
     System.out.println("[BUILDER PATTERN]");
 
     // Create an object of BeehiveRooms that we will build and add to our beehive object
+    System.out.println("Creating rooms for our Beehives...");
     BeehiveRooms rooms = apiary.createBeehiveRooms()
         .spawnRooms(2).commonRooms(3).bedRooms(5).build();
     BeehiveRooms rooms2 = apiary.createBeehiveRooms()
@@ -37,29 +41,31 @@ public class Main {
         .spawnRooms(36).commonRooms(9).bedRooms(14).build();
 
     // Create an object of Beehive and add the room object we build earlier to it
+    System.out.println("Creating beehives and building on the rooms...");
     Beehive beehive = apiary.createBeehive().id(1).name("BEEEHive").rooms(rooms).build();
     Beehive beehive2 = apiary.createBeehive().id(2).name("Honey Hive").rooms(rooms2).build();
     Beehive beehive3 = apiary.createBeehive().id(3).name("Cool Hive").rooms(rooms3).build();
+    
+    // Add the newly created beehives to our beehive list in apiary class.
+    apiary.addBeehive(beehive);
+    apiary.addBeehive(beehive2);
+    apiary.addBeehive(beehive3);
+    
+    // Get the list so we can easily get information from it
+    Map<Integer, Beehive> beehiveList = apiary.getBeehives();
 
     // Print out our Beehives
-    System.out.println("\nBeehive #" + beehive.getId() 
-        + "\nBeehive Name: " + beehive.getName()
-        + "\nBeehive Spawn Rooms: " + beehive.getRooms().getSpawnRooms() 
-        + "\nBeehive Common Rooms: " + beehive.getRooms().getCommonRooms() 
-        + "\nBeehive Bed Rooms " + beehive.getRooms().getBedRooms());
-
-    System.out.println("\nBeehive #" + beehive2.getId() + "\nBeehive Name: " 
-        + beehive2.getName()
-        + "\nBeehive Spawn Rooms: " + beehive2.getRooms().getSpawnRooms() 
-        + "\nBeehive Common Rooms: " + beehive2.getRooms().getCommonRooms() 
-        + "\nBeehive Bed Rooms " + beehive2.getRooms().getBedRooms());
-
-    System.out.println("\nBeehive #" + beehive3.getId() 
-        + "\nBeehive Name: " + beehive3.getName()
-        + "\nBeehive Spawn Rooms: " + beehive3.getRooms().getSpawnRooms() 
-        + "\nBeehive Common Rooms: " + beehive3.getRooms().getCommonRooms() 
-        + "\nBeehive Bed Rooms " + beehive3.getRooms().getBedRooms());
+    System.out.println("Displaying Beehives...");
+    for(int i = 0; i < apiary.getBeehives().size(); i++) {
+      System.out.println("\nBeehive #" + beehiveList.get(i+1).getId()
+        + "\nBeehive Name: " + beehiveList.get(i+1).getName()
+        + "\nBeehive Spawn Rooms: " + beehiveList.get(i+1).getRooms().getSpawnRooms() 
+        + "\nBeehive Common Rooms: " + beehiveList.get(i+1).getRooms().getCommonRooms() 
+        + "\nBeehive Bed Rooms " + beehiveList.get(i+1).getRooms().getBedRooms());
+    }
+    
 
     // DECORATOR PATTERN
+    System.out.println("\n[DECORATOR PATTERN]");
   }
 }
