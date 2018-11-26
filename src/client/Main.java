@@ -1,9 +1,8 @@
 package client;
 
-import java.util.ArrayList;
-import java.util.Map;
-
+//Imports
 import builderpattern.Beehive;
+
 import builderpattern.BeehiveRooms;
 import builderpattern.Species;
 import decoratorpattern.Architect;
@@ -11,7 +10,12 @@ import decoratorpattern.BaseBee;
 import decoratorpattern.Bee;
 import decoratorpattern.Queen;
 import decoratorpattern.Worker;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 import singletonpattern.Apiary;
+
 
 /**
  * Main class for the testing of the Patterns.
@@ -58,9 +62,12 @@ public class Main {
 
     // Create an object of Beehive and add the room object we build earlier to it
     System.out.println("Creating beehives and building on the rooms...");
-    Beehive beehive = apiary.createBeehive().id(1).name("BEEEHive").species(bumblebee).rooms(rooms).build();
-    Beehive beehive2 = apiary.createBeehive().id(2).name("Honey Hive").species(apidaebee).rooms(rooms2).build();
-    Beehive beehive3 = apiary.createBeehive().id(3).name("Cool Hive").species(carpenterbee).rooms(rooms3).build();
+    Beehive beehive = apiary.createBeehive().id(1).name("BEEEHive")
+        .species(bumblebee).rooms(rooms).build();
+    Beehive beehive2 = apiary.createBeehive().id(2).name("Honey Hive")
+        .species(apidaebee).rooms(rooms2).build();
+    Beehive beehive3 = apiary.createBeehive().id(3).name("Cool Hive")
+        .species(carpenterbee).rooms(rooms3).build();
     
     // Add the newly created beehives to our beehive list in apiary class.
     apiary.addBeehive(beehive);
@@ -72,13 +79,13 @@ public class Main {
 
     // Print out our Beehives
     System.out.println("Displaying Beehives...");
-    for(int i = 0; i < apiary.getBeehives().size(); i++) {
-      System.out.println("\nBeehive #" + beehiveList.get(i+1).getId()
-        + "\nBeehive Name: " + beehiveList.get(i+1).getName()
-        + "\nBeehive Species: " + beehiveList.get(i+1).getSpecies().getBeeSpecies()
-        + "\nBeehive Spawn Rooms: " + beehiveList.get(i+1).getRooms().getSpawnRooms() 
-        + "\nBeehive Common Rooms: " + beehiveList.get(i+1).getRooms().getCommonRooms() 
-        + "\nBeehive Bed Rooms " + beehiveList.get(i+1).getRooms().getBedRooms());
+    for (int i = 0; i < apiary.getBeehives().size(); i++) {
+      System.out.println("\nBeehive #" + beehiveList.get(i + 1).getId()
+          + "\nBeehive Name: " + beehiveList.get(i + 1).getName()
+          + "\nBeehive Species: " + beehiveList.get(i + 1).getSpecies().getBeeSpecies()
+          + "\nBeehive Spawn Rooms: " + beehiveList.get(i + 1).getRooms().getSpawnRooms() 
+          + "\nBeehive Common Rooms: " + beehiveList.get(i + 1).getRooms().getCommonRooms() 
+          + "\nBeehive Bed Rooms " + beehiveList.get(i + 1).getRooms().getBedRooms());
     }
     
 
@@ -99,7 +106,7 @@ public class Main {
     bees.add(architect);
     
     System.out.println("Displaying Bees...");
-    for(int i = 0; i < bees.size(); i++) {
+    for (int i = 0; i < bees.size(); i++) {
       System.out.println("\nSpecies: " + bees.get(i).getSpecies()
           + "\nBeehive: " + bees.get(i).getBeehive()
           + "\nJob: " + bees.get(i).getJob()

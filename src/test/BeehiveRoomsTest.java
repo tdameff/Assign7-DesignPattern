@@ -1,18 +1,19 @@
 package test;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+//Imports
+import static org.junit.Assert.assertTrue;
 
 import builderpattern.Beehive;
+
 import builderpattern.BeehiveRooms;
-import builderpattern.BeehiveRooms.RoomBuilder;
+import org.junit.Test;
+
 import singletonpattern.Apiary;
 
 public class BeehiveRoomsTest {
 
   @Test
-  public void BuilderTest() {
+  public void builderTest() {
     Apiary apiary = Apiary.getInstance();
     
     BeehiveRooms rooms = apiary.createBeehiveRooms()

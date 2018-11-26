@@ -1,7 +1,9 @@
 package test;
 
+//Imports
+import static org.junit.Assert.assertTrue;
+
 import builderpattern.Species;
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -17,8 +19,8 @@ public class SpeciesTest {
     Species s1 = new Species(1);
     Species s2 = new Species(2);
     Species s3 = new Species(3);
-    Species s4 = new Species(4);
-    Species s5 = new Species(5);
+    final Species s4 = new Species(4);
+    final Species s5 = new Species(5);
     assertTrue(s1.getBeeSpecies() == "Bumble Bee");
     assertTrue(s2.getBeeSpecies() == "Honey Bee");
     assertTrue(s3.getBeeSpecies() == "Carpenter Bee");

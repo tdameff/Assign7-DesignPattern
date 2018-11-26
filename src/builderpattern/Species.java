@@ -10,27 +10,27 @@ public class Species {
     this.beeSpecies = "Bumble Bee";
   }
   
+  /**
+   * Constructor that takes one argument.
+   * @param species of type int
+   */
   public Species(int species) {
     
     if (species == 1) {
       this.beeSpecies = "Bumble Bee";
-    }
-    else if (species == 2) {
+    } else if (species == 2) {
       this.beeSpecies = "Honey Bee";
-    }
-    else if (species == 3) {
+    } else if (species == 3) {
       this.beeSpecies = "Carpenter Bee";
-    }
-    else if (species == 4) {
+    } else if (species == 4) {
       this.beeSpecies = "Andrena Bee";
-    }
-    else if (species == 5) {
+    } else if (species == 5) {
       this.beeSpecies = "Apidae Bee";
     }
   }
 
   /**
-   * Get the bee species
+   * Get the bee species.
    * 
    * @return the beeSpecies
    */
@@ -39,24 +39,20 @@ public class Species {
   }
 
   /**
-   * Set the bee species
+   * Set the bee species.
    * 
-   * @param beeSpecies the beeSpecies to set
+   * @param species the beeSpecies to set
    */
   public void setBeeSpecies(int species) {
     if (species == 1) {
       this.beeSpecies = "Bumble Bee";
-    }
-    else if (species == 2) {
+    } else if (species == 2) {
       this.beeSpecies = "Honey Bee";
-    }
-    else if (species == 3) {
+    } else if (species == 3) {
       this.beeSpecies = "Carpenter Bee";
-    }
-    else if (species == 4) {
+    } else if (species == 4) {
       this.beeSpecies = "Andrena Bee";
-    }
-    else if (species == 5) {
+    } else if (species == 5) {
       this.beeSpecies = "Apidae Bee";
     }
   }
