@@ -51,7 +51,7 @@ public class Apiary {
   }
   
   /**
-   * Add the beehive to the beehive list
+   * Add the beehive to the beehive list.
    * @param beehive of type Beehive
    */
   public void addBeehive(Beehive beehive) {
