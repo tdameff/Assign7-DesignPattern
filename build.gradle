@@ -3,14 +3,16 @@ plugins {
    id  'com.github.spotbugs' version '1.6.5'
 }
 
-apply plugin: 'jacoco'
+apply plugin: 'java'
 apply plugin: 'application'
 
+sourceSets.main.java.srcDirs = ['src']
+sourceSets.test.java.srcDirs = ['src/test']
 
 ///////////////////////////////////////////////////////////////////////////
 // Definint Main class
 ///////////////////////////////////////////////////////////////////////////
-mainClassName = 'main.java.Main'
+mainClassName = 'client.Main'
 
 ///////////////////////////////////////////////////////////////////////////
 // Repositories and dependencies for code go here
@@ -21,17 +23,18 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.12'
+  compile 'junit:junit:4.12'
 }
 
-task fatJar(type: Jar) {
-    manifest {
-        attributes  \
-			 'Main-Class' : 'main.java.Main' 	 
-    }
-    
-    baseName = 'Assign7-DesignPattern'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
+jar {
+   manifest {
+       attributes(
+               'Main-Class': 'client.Main'
+       )
+   }
+   from {
+       configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+   }
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -53,7 +56,6 @@ tasks.withType(Checkstyle) {
 checkstyle {
     toolVersion = "8.8"
 }
-
 
 ///////////////////////////////////////////////////////////////////////////
 // Configure SpotBugs
