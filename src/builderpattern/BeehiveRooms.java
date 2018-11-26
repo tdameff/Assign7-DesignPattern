@@ -17,9 +17,9 @@ public class BeehiveRooms {
 
   private BeehiveRooms(RoomBuilder builder) {
 
-      this.spawnRooms = builder.spawnRooms;
-      this.commonRooms = builder.commonRooms;
-      this.bedRooms = builder.bedRooms;
+    this.spawnRooms = builder.spawnRooms;
+    this.commonRooms = builder.commonRooms;
+    this.bedRooms = builder.bedRooms;
   }
 
   /**
