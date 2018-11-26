@@ -78,6 +78,7 @@ public class Beehive {
   }
 
   /**
+   * Gets the species type.
    * @return the species
    */
   public Species getSpecies() {
@@ -85,6 +86,7 @@ public class Beehive {
   }
 
   /**
+   * Sets the speecies type.
    * @param species the species to set
    */
   public void setSpecies(Species species) {
