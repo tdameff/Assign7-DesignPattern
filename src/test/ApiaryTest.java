@@ -1,14 +1,17 @@
 package test;
 
 //Imports
-import builderpattern.Beehive;
-import builderpattern.BeehiveRooms;
-import singletonpattern.Apiary;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
+import builderpattern.Beehive;
+
+import builderpattern.BeehiveRooms;
+
 import org.junit.Test;
+
+import singletonpattern.Apiary;
 
 
 /**
