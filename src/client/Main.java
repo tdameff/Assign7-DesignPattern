@@ -55,9 +55,7 @@ public class Main {
     //Create species obj to use
     System.out.println("Creating species for our Beehives...");
     Species bumblebee = new Species(1);     // Bumble Bee
-    Species honeybee = new Species(2);      // Honey Bee
     Species carpenterbee = new Species(3);  // Carpenter Bee
-    Species andrenabee = new Species(4);    // Andrena Bee
     Species apidaebee = new Species(5);     // Apidae Bee
 
     // Create an object of Beehive and add the room object we build earlier to it
@@ -115,20 +113,3 @@ public class Main {
     
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

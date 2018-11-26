@@ -3,19 +3,20 @@ package test;
 //Imports
 import static org.junit.Assert.assertTrue;
 
+import builderpattern.Beehive;
+import builderpattern.BeehiveRooms;
+import builderpattern.Species;
 import decoratorpattern.Architect;
 import decoratorpattern.BaseBee;
 import decoratorpattern.Bee;
 import decoratorpattern.Queen;
 import decoratorpattern.Worker;
-import singletonpattern.Apiary;
 
 import java.util.ArrayList;
+
 import org.junit.Test;
 
-import builderpattern.Beehive;
-import builderpattern.BeehiveRooms;
-import builderpattern.Species;
+import singletonpattern.Apiary;
 
 public class DecoratorTest {
 
